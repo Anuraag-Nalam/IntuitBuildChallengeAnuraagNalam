@@ -55,25 +55,29 @@ The code is refactored into a modular architecture:
 - `com.example.salesanalysis.service`: Contains `SalesAnalysisService` with all business logic and stream operations.
 - `com.example.salesanalysis.App`: The main entry point that is responsible for loading and analysis.
 
+## Testing Strategy
+
+The project includes a comprehensive test suite to ensure correctness:
+
+1.  **To run the unit tests:**
+
+    ```bash
+    java -jar lib/junit-platform-console-standalone-1.9.2.jar -cp "bin;lib/commons-csv-1.10.0.jar" -c com.example.salesanalysis.SalesAnalyzerTest
+    ```
+
+2.  **To run the integration tests:**
+
+    ```bash
+    java -jar lib/junit-platform-console-standalone-1.9.2.jar -cp "bin;lib/commons-csv-1.10.0.jar" -c com.example.salesanalysis.SalesAnalysisIntegrationTest
+    ```
+
 ## Setup and Run Instructions
 
 ### Prerequisites
 
 - Java 11 or higher
-- Maven (Optional, for dependency management)
 
-### Option 1: Using Maven (Recommended)
-
-1.  **Build the project:**
-    ```bash
-    mvn clean install
-    ```
-2.  **Run the application:**
-    ```bash
-    mvn exec:java -Dexec.mainClass="com.example.salesanalysis.App"
-    ```
-
-### Option 2: Manual Compilation (No Maven)
+### Manual Compilation (No Maven required)
 
 If you do not have Maven installed, you can compile and run using the provided `lib` folder.
 
